@@ -1,0 +1,23 @@
+services:
+
+#  postgres:
+#    build:
+#      context: ./db
+#    container_name: postgres
+#    environment:
+#      POSTGRES_USER: ${DB_USER}
+#      POSTGRES_PASSWORD: ${DB_PASS}
+#      PGDATA: ${PGDATA:-/data/postgres}
+#      TZ: ${TZ:-Europe/Paris}
+#      PGTZ: ${TZ:-Europe/Paris}
+#    ports:
+#      - ${POSTGRES_PORT:-5432}:5432
+
+  rabbitmq:
+    image: rabbitmq:latest
+    container_name: rabbitmq
+    environment:
+      TZ: ${TZ:-Europe/Paris}
+    ports:
+      - 5672:5672
+      - 15672:15672

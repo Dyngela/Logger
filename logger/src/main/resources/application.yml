@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: logger
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:49153/test
+    username: postgres
+    password: postgrespw
+  rabbitmq:
+    addresses: localhost:5672
+
+
+rabbitmq:
+  exchanges:
+    internal: internal.exchange
+  queue:
+    notification: log.queue
+  routing-key:
+    internal-notification: internal.log.routing-key
